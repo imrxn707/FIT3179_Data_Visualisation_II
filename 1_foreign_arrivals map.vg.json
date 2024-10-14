@@ -1,0 +1,88 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": null,
+  "width": 1000,
+  "height": 300,
+  "title": "Foreign Arrivals to Malaysia by Entry Point",
+  "projection": {
+    "type": "mercator",
+    "center": [
+      108,
+      4
+    ],
+    "scale": 2200
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "data/malaysia-states.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "malaysia"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#e0e0e0",
+        "stroke": "#4b4a4a",
+        "strokeWidth": 2.5
+      }
+    },
+    {
+      "data": {
+        "url": "data/Malaysia Foreign Arrivals by Origin and Gender.csv"
+      },
+      "mark": {
+        "type": "circle",
+        "tooltip": true
+      },
+      "encoding": {
+        "longitude": {
+          "field": "long",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "size": {
+          "aggregate": "sum",
+          "field": "arrivals",
+          "type": "quantitative",
+          "title": "Total Arrivals",
+          "scale": {
+            "range": [
+              20,
+              200
+            ]
+          }
+        },
+        "color": {
+          "field": "arrivals",
+          "type": "quantitative",
+          "scale": {
+            "scheme": "oranges"
+          },
+          "title": "Arrivals Count"
+        },
+        "tooltip": [
+          {
+            "field": "poe",
+            "type": "nominal",
+            "title": "Entry Point"
+          },
+          {
+            "field": "arrivals",
+            "type": "quantitative",
+            "title": "Total Arrivals"
+          },
+          {
+            "field": "state",
+            "type": "nominal",
+            "title": "State"
+          }
+        ]
+      }
+    }
+  ]
+}

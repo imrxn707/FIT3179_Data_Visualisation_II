@@ -1,0 +1,121 @@
+body {
+  width: 1200px;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #ffffff;        
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.header {
+  margin-top: 0px;
+  background-color: #bbbbbb;
+  text-align: center;
+  color: #000000;
+}
+
+.h1 {
+  font-size: 3.0em;
+  margin-bottom: 20px;
+  font-family: serif;
+}
+
+.subtitle {
+  font-size: 1.0em;
+  margin-top: -20px;
+  font-family: Arial, sans-serif;
+}
+
+.dual-containers {
+  background-color: #dddddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 0;
+}
+
+.section-container {
+  background-color: #dddddd;
+  display: flex;
+  flex: 1; 
+}
+
+.chart-container {
+  background-color: #dddddd;
+  display: flex;
+  flex: 1;
+}
+
+.description-container {
+  background-color: #dddddd;
+  display: flex;
+  flex: 1; 
+}
+
+.footer-container {
+  background-color: #dddddd;
+  display: flex;
+  flex: 1; 
+}
+
+.section-box {
+  flex: 1;
+  border-radius: 8px;
+  background-color: #eeeeee;
+  font-size: 20px;
+  margin-top: 10px;
+  /* margin-bottom: 10px; */
+  margin-right: 10px;
+  margin-left: 10px;
+  text-align: center;
+}
+
+.chart-box {
+  background-color: #ffffff;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-top: 10px;
+  flex: 1;
+  border-radius: 10px;
+}
+
+.description-box {
+  background-color: #ffffff;
+  flex: 1;
+  padding: 5px;
+  border-radius: 8px;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-top: 10px;
+  /* margin-bottom: 10px; */
+  text-align: justify;
+}
+
+.description-box2 {
+  background-color: #ffffff;
+  flex: 1;
+  padding: 5px;
+  border-radius: 8px;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-right: 10px;
+  /* margin-left: 10px; */
+  margin-top: 10px;
+  /* margin-bottom: 10px; */
+  text-align: justify;
+}
+
+.footer-box {
+  flex: 1;
+  border-radius: 8px;
+  padding: 5px;
+  background-color: #eeeeee;
+  font-size: 12px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+  text-align: left;
+}

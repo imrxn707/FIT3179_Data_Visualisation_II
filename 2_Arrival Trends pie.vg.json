@@ -1,0 +1,112 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Proportion of male and female arrivals into Malaysia with tooltips including percentage.",
+  "data": {
+    "url": "data/Malaysia Foreign Arrivals by Origin and Gender.csv",
+    "format": {
+      "type": "csv"
+    }
+  },
+  "transform": [
+    {
+      "aggregate": [
+        {
+          "op": "sum",
+          "field": "arrivals_male",
+          "as": "total_male"
+        },
+        {
+          "op": "sum",
+          "field": "arrivals_female",
+          "as": "total_female"
+        }
+      ]
+    },
+    {
+      "fold": [
+        "total_male",
+        "total_female"
+      ],
+      "as": [
+        "gender",
+        "arrivals"
+      ]
+    },
+    {
+      "calculate": "datum.gender === 'total_male' ? 'Male' : 'Female'",
+      "as": "gender_label"
+    },
+    {
+      "window": [
+        {
+          "op": "sum",
+          "field": "arrivals",
+          "as": "total_arrivals"
+        }
+      ],
+      "frame": [
+        null,
+        null
+      ]
+    },
+    {
+      "calculate": "datum.arrivals / datum.total_arrivals * 100",
+      "as": "percentage"
+    }
+  ],
+  "mark": {
+    "type": "arc",
+    "outerRadius": 117
+  },
+  "encoding": {
+    "theta": {
+      "field": "arrivals",
+      "type": "quantitative"
+    },
+    "color": {
+      "field": "gender",
+      "type": "nominal",
+      "scale": {
+        "domain": [
+          "total_male",
+          "total_female"
+        ],
+        "range": [
+          "#ED8728",
+          "#FBB825"
+        ]
+      },
+      "legend": {
+        "title": "Gender",
+        "labelExpr": "datum.label === 'total_male' ? 'Male' : 'Female'"
+      }
+    },
+    "tooltip": [
+      {
+        "field": "arrivals",
+        "title": "Total Arrivals",
+        "format": ",",
+        "formatType": "number"
+      },
+      {
+        "field": "gender_label",
+        "title": "Gender"
+      },
+      {
+        "field": "percentage",
+        "title": "Percentage",
+        "format": ".1f",
+        "formatType": "number"
+      }
+    ]
+  },
+  "view": {
+    "stroke": null
+  },
+  "config": {
+    "legend": {
+      "labelFontSize": 12,
+      "titleFontSize": 14
+    }
+  }
+}

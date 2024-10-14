@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Vega and Vega-Lite libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+</head>
+
+<body>
+    
+    <!-- Title Section -->
+    <header class="header">
+
+        <h1 class="header h1">Mapping Malaysia's Foreign Arrivals</h1>
+
+        <p class="subtitle">
+            The global pandemic has drastically altered international travel, and Malaysia saw a
+            massive decline in foreign arrivals.
+        </p>
+
+        <p class="subtitle">
+            Question is: How is Malaysia doing now? Scroll down to explore !
+        </p>
+
+    <header>
+
+    <!-- Entry Points into Malaysia -->
+    <div class="section-container">
+
+        <div class="section-box">
+
+            <h2>
+                Which Point of Entry Has The Highest Traffic?
+            <h2>
+
+        </div>
+
+    </div>
+
+    <div class="chart-container">
+
+        <div class="chart-box">
+
+            <div id="map"></div>
+
+        </div>
+
+    </div>
+
+    <div class="description-container">
+
+        <div class="description-box">
+
+            <p>The map shows the <b>key points of entry</b> into Malaysia, highlighting where
+                foreign arrivals are most concentrated. <b>The largest symbols</b> on the map represent the <b>highest traffic</b>.
+                It is clear that the <b>Johor</b> has the has the highest traffic of foreign arrivals.
+            </p>
+            <p>
+                <b>Bangunan Sultan Iskandar</b> & <b>Gelang Patah</b> which are situated in <b>Johor</b> are leading as the top entry location.
+                This shows that Johor experiences the highest traffic due to its <b>strategic location</b>
+                at the <b>Malaysia-Singapore border</b>. Every day, thousands of Malaysians and Singaporeans
+                cross between the two countries for work, leisure, and trade, making it one of the
+                <b>busiest land crossings</b> in the world.
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- Arrival Changes over Time -->
+    <div class="section-container">
+
+        <div class="section-box">
+
+            <h2>
+                How Have Foreign Arrivals to Malaysia Changed Over the Years?
+            <h2>
+
+        </div>
+
+    </div>
+
+    <div class="description-container">
+
+        <div class="description-box">
+    
+            <p>The <b>area chart</b> below shows the trends in foreign arrivals into Malaysia from <b>2020 to 2023</b>, 
+                seperated by gender. It clearly shows the <b>significant decline</b> in arrivals at the 
+                start of <b>2020</b>, coinciding with the global <b>COVID-19 pandemic</b>.
+            </p>
+
+            <p>However, starting from <b>early 2022</b>, we see a gradual recovery as Malaysia reopens 
+                its borders and international travel begins to pick up again. The trend shows 
+                <b>consistent growth</b>, with both male and female arrivals increasing steadily. 
+                By <b>late 2023</b>, arrivals reach a <b>stable point</b>, reflecting the <b>normalization of 
+                travel</b> post-pandemic.
+            </p>
+    
+        </div>
+    
+    </div>
+
+    </div>
+
+    <div class="chart-container">
+
+        <div class="chart-box">
+
+            <div id="area-chart"></div>
+
+        </div>
+
+    </div>
+
+    <div class="dual-containers">
+
+        <div class="chart-container">
+
+            <div class="chart-box">
+
+                <div id="pie-chart"></div>
+
+            </div>
+                
+        </div>
+
+        <div class="description-container">
+
+            <div class="description-box2">
+
+                <p>The <b>pie chart</b> shows the proportion of <b>females and males arrivals</b> into Malaysia. 
+                    It shows that <b>57.2%</b> of the total arrivals  were male, while the remaining <b>42.8%</b> were female.
+                </p>
+                <p>
+                    This suggests a slight <b>male dominance</b> in foreign travel to Malaysia. 
+                    which may be influenced by factors such as <b>work-related travel</b> and <b>cross-border commuting</b>, 
+                    especially in regions like Johor where daily crossings are common. The gender 
+                    proportions remain relatively stable throughout the period, as also reflected 
+                    in the area chart tracking changes over time.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Number of Arrivals by States -->
+    <div class="section-container">
+
+        <div class="section-box">
+
+            <h2>
+                Which States Receive the Most Foreign Arrivals?
+            <h2>
+
+        </div>
+
+    </div>
+
+    <div class="chart-container">
+
+        <div class="chart-box">
+
+            <div id="arrivals-by-state"></div>
+
+        </div>
+
+    </div>
+
+    <div class="description-container">
+
+        <div class="description-box">
+
+            <p>The <b>bar chart</b> above shows the number of foreign arrivals into Malaysia, broken down by <b>state</b>. 
+                Johor stands out with the <b>highest number</b> of arrivals, far surpassing other states. 
+                Meanwhile, <b>Selangor</b>, which includes <b>Kuala Lumpur International Airport (KLIA)</b>, ranks second in terms 
+                of foreign arrivals. As the main <b>international gateway</b> for air travelers into Malaysia, it is 
+                a major <b>entry point</b> for <b>tourists</b>, <b>business travelers</b>, and <b>international connections</b>.
+            </p>
+
+            <p>In contrast, states like <b>Terengganu</b>, <b>Pahang</b>, and <b>Melaka</b> exhibit significantly lower arrival numbers 
+                due to their smaller <b>international entry points</b>, <b>limited air traffic</b>, and <b>geographical factors</b>. 
+                These states tend to attract more <b>domestic</b> than international tourists, resulting in fewer foreign 
+                arrivals compared to Johor and Selangor. 
+            </p>
+
+            <p>
+                The disparity in arrival numbers highlights the impact of accessibility and <b>regional connectivity</b> 
+                on tourism patterns within Malaysia, illustrating how certain states benefit from their strategic 
+                locations while others face challenges in attracting international visitors.
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- Top Countries by Arrivals -->
+    <div class="section-container">
+
+        <div class="section-box">
+
+            <h2>
+                "Which Countries Send the Most Visitors to Malaysia?"
+            <h2>
+
+        </div>
+
+    </div>
+
+    <div class="chart-container">
+
+        <div class="chart-box">
+
+            <div id="top-countries"></div>
+
+        </div>
+
+    </div>
+
+    <div class="description-container">
+
+        <div class="description-box">
+
+            <p>The bar chart highlights the <b>top countries</b> contributing to foreign arrivals in Malaysia by showing 
+                the <b>total arrivals</b> from each nation over the recent years. It reveals that <b>Singapore</b> ranks as the 
+                highest contributor, followed by <b>Indonesia</b> and <b>Thailand</b>, demonstrating the dominance of Southeast 
+                Asian countries and the accessibility of travel between these nations.
+            </p>
+
+            <p>This chart effectively illustrates the significant role that neighboring countries play in 
+                shaping Malaysia's <b>tourism landscape</b>, emphasizing the importance of regional connections in 
+                fostering international arrivals.</p>
+
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="footer-container">
+
+        <div class="footer-box">
+
+            <p>This visualisation is created by Muhammad Imran as part of FIT3179 Data Visualisation Project.</p>
+
+        </div>
+
+    </div>
+
+    <!-- Embedding Vega-Lite Visualizations -->
+    <script>
+
+        vegaEmbed('#map', '1_foreign_arrivals map.vg.json', { actions: false }).then(function (result) {
+        }).catch(console.error);
+
+        vegaEmbed('#area-chart', '2_Arrival Trends line.vg.json', { actions: false }).then(function(result) {
+        }).catch(console.error);
+
+        vegaEmbed('#pie-chart', '2_Arrival Trends pie.vg.json', { actions: false }).then(function(result) {
+        }).catch(console.error);
+        
+        vegaEmbed('#arrivals-by-state', '3_State-Wise Arrivals Bar.vg.json', { actions: false }).then(function (result) {
+        }).catch(console.error);
+
+        vegaEmbed('#top-countries', '4_Country-wise Analysis.vg.json', { actions: false }).then(function (result) {
+        }).catch(console.error);
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Number of Arrivals by States",
+  "width": 1000,
+  "height": 500,
+  "data": {
+    "url": "data/Malaysia Foreign Arrivals by Origin and Gender.csv",
+    "format": {
+      "type": "csv"
+    }
+  },
+  "transform": [
+    {
+      "aggregate": [
+        {
+          "op": "sum",
+          "field": "arrivals",
+          "as": "total_arrivals"
+        }
+      ],
+      "groupby": [
+        "state"
+      ]
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "color": "#ED8728"
+      },
+      "encoding": {
+        "x": {
+          "field": "state",
+          "type": "nominal",
+          "title": "State",
+          "sort": "-y",
+          "axis": {
+            "labelAngle": 0
+          }
+        },
+        "y": {
+          "field": "total_arrivals",
+          "type": "quantitative",
+          "title": "Total Arrivals"
+        },
+        "tooltip": [
+          {
+            "field": "state",
+            "type": "nominal",
+            "title": "State"
+          },
+          {
+            "field": "total_arrivals",
+            "type": "quantitative",
+            "title": "Total Arrivals"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": -430,
+        "dy": -148,
+        "fontSize": 14,
+        "color": "black"
+      },
+      "encoding": {
+        "text": {
+          "value": "This is due to Johor’s close proximity to Singapore,"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": -430,
+        "dy": -134,
+        "fontSize": 14,
+        "color": "black"
+      },
+      "encoding": {
+        "text": {
+          "value": "one of the busiest international land crossings in the world."
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": -370,
+        "dy": 68,
+        "fontSize": 14,
+        "color": "black"
+      },
+      "encoding": {
+        "text": {
+          "value": "This is due Kuala Lumpur International Airport (KLIA),"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": -370,
+        "dy": 82,
+        "fontSize": 14,
+        "color": "black"
+      },
+      "encoding": {
+        "text": {
+          "value": "being the main international gateway for air travelers into Malaysia."
+        }
+      }
+    }
+  ]
+}

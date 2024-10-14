@@ -1,0 +1,138 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": null,
+  "data": {
+    "url": "data/Malaysia Foreign Arrivals by Origin and Gender.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "date": "date"
+      }
+    }
+  },
+  "transform": [
+    {
+      "fold": [
+        "arrivals_male",
+        "arrivals_female"
+      ],
+      "as": [
+        "gender",
+        "arrivals"
+      ]
+    },
+    {
+      "calculate": "datum.gender === 'arrivals_male' ? 'Male' : 'Female'",
+      "as": "gender"
+    }
+  ],
+  "vconcat": [
+    {
+      "width": 1000,
+      "height": 300,
+      "title": "Arrival Changes over Time",
+      "mark": {
+        "type": "area",
+        "tooltip": true
+      },
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal",
+          "timeUnit": "yearmonth",
+          "scale": {
+            "domain": {
+              "param": "brush"
+            }
+          },
+          "axis": {
+            "title": "",
+            "tickCount": 10
+          }
+        },
+        "y": {
+          "aggregate": "sum",
+          "field": "arrivals",
+          "type": "quantitative",
+          "title": "Total Arrivals"
+        },
+        "color": {
+          "field": "gender",
+          "type": "nominal",
+          "title": "Gender",
+          "scale": {
+            "domain": [
+              "Female",
+              "Male"
+            ],
+            "range": [
+              "#FBB825",
+              "#ED8728"
+            ]
+          }
+        },
+        "tooltip": [
+          {
+            "aggregate": "sum",
+            "field": "arrivals",
+            "title": "Total Arrivals",
+            "format": ",",
+            "formatType": "number"
+          },
+          {
+            "field": "gender",
+            "title": "Gender"
+          },
+          {
+            "field": "date",
+            "title": "Date",
+            "type": "temporal",
+            "format": "%b %Y",
+            "timeUnit": "yearmonth"
+          }
+        ]
+      }
+    },
+    {
+      "width": 1000,
+      "height": 60,
+      "mark": {
+        "type": "line",
+        "color": "#ED8728"
+      },
+      "title": "Use this line chart to filter out the data based on time",
+      "params": [
+        {
+          "name": "brush",
+          "select": {
+            "type": "interval",
+            "encodings": [
+              "x"
+            ]
+          }
+        }
+      ],
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal",
+          "timeUnit": "yearmonth",
+          "axis": {
+            "title": "Year",
+            "tickCount": 10
+          }
+        },
+        "y": {
+          "aggregate": "sum",
+          "field": "arrivals",
+          "type": "quantitative",
+          "axis": {
+            "tickCount": 3,
+            "grid": false
+          },
+          "title": "Total Arrivals"
+        }
+      }
+    }
+  ]
+}

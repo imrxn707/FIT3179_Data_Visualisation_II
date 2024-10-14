@@ -1,0 +1,207 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 1000,
+  "height": 500,
+  "title": "Top Countries by Arrivals",
+  "data": {
+    "url": "data/foreign_arrivals.csv",
+    "format": {
+      "type": "csv"
+    }
+  },
+  "transform": [
+    {
+      "filter": "datum.arrivals > 0"
+    },
+    {
+      "aggregate": [
+        {
+          "op": "sum",
+          "field": "arrivals",
+          "as": "total_arrivals"
+        }
+      ],
+      "groupby": [
+        "country"
+      ]
+    },
+    {
+      "window": [
+        {
+          "op": "rank",
+          "as": "rank"
+        }
+      ],
+      "sort": [
+        {
+          "field": "total_arrivals",
+          "order": "descending"
+        }
+      ]
+    },
+    {
+      "filter": "datum.rank <= 10"
+    },
+    {
+      "lookup": "country",
+      "from": {
+        "data": {
+          "values": [
+            {
+              "code": "SGP",
+              "name": "Singapore"
+            },
+            {
+              "code": "IDN",
+              "name": "Indonesia"
+            },
+            {
+              "code": "THA",
+              "name": "Thailand"
+            },
+            {
+              "code": "CHN",
+              "name": "China"
+            },
+            {
+              "code": "BRN",
+              "name": "Brunei"
+            },
+            {
+              "code": "IND",
+              "name": "India"
+            },
+            {
+              "code": "BGD",
+              "name": "Bangladesh"
+            },
+            {
+              "code": "PHL",
+              "name": "Philippines"
+            },
+            {
+              "code": "KOR",
+              "name": "Korea"
+            },
+            {
+              "code": "VNM",
+              "name": "Vietnam"
+            }
+          ]
+        },
+        "key": "code",
+        "fields": [
+          "name"
+        ]
+      },
+      "as": [
+        "country_full"
+      ]
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "tooltip": true
+      },
+      "encoding": {
+        "x": {
+          "field": "country_full",
+          "type": "nominal",
+          "title": "Country",
+          "sort": "-y"
+        },
+        "y": {
+          "field": "total_arrivals",
+          "type": "quantitative",
+          "title": "Total Arrivals"
+        },
+        "color": {
+          "field": "country_full",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Singapore",
+              "Indonesia",
+              "Thailand",
+              "China",
+              "Brunei",
+              "India",
+              "Bangladesh",
+              "Philippines",
+              "Korea",
+              "Vietnam"
+            ],
+            "range": [
+              "#ED8728",
+              "#ED8728",
+              "#ED8728",
+              "#7f7f7f",
+              "#ED8728",
+              "#7f7f7f",
+              "#7f7f7f",
+              "#7f7f7f",
+              "#7f7f7f",
+              "#ED8728"
+            ]
+          },
+          "title": "Country",
+          "legend": null
+        },
+        "tooltip": [
+          {
+            "field": "country_full",
+            "type": "nominal",
+            "title": "Country"
+          },
+          {
+            "field": "total_arrivals",
+            "type": "quantitative",
+            "title": "Total Arrivals"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": -370,
+        "dy": -22,
+        "fontSize": 14,
+        "color": "black"
+      },
+      "encoding": {
+        "text": {
+          "value": "Top 3 countries with the highest number of arrivals are from Southeast Asia "
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": -370,
+        "dy": -10,
+        "fontSize": 14,
+        "color": "black"
+      },
+      "encoding": {
+        "text": {
+          "value": "due to proximity, trade, tourism, and cultural ties with Malaysia."
+        }
+      }
+    }
+  ],
+  "config": {
+    "axis": {
+      "labelFontSize": 12,
+      "titleFontSize": 14
+    },
+    "legend": {
+      "labelFontSize": 12,
+      "titleFontSize": 14
+    }
+  }
+}
