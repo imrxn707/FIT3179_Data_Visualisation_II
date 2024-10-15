@@ -141,7 +141,7 @@
               "#ED8728",
               "#7f7f7f",
               "#7f7f7f",
-              "#7f7f7f",
+              "#ED8728",
               "#7f7f7f",
               "#ED8728"
             ]
@@ -167,14 +167,14 @@
       "mark": {
         "type": "text",
         "align": "left",
-        "dx": -370,
-        "dy": -22,
+        "dx": -390,
+        "dy": -45,
         "fontSize": 14,
         "color": "black"
       },
       "encoding": {
         "text": {
-          "value": "Top 3 countries with the highest number of arrivals are from Southeast Asia "
+          "value": "The top 3 countries contributes"
         }
       }
     },
@@ -182,14 +182,134 @@
       "mark": {
         "type": "text",
         "align": "left",
-        "dx": -370,
-        "dy": -10,
+        "dx": -390,
+        "dy": -30,
         "fontSize": 14,
         "color": "black"
       },
       "encoding": {
         "text": {
-          "value": "due to proximity, trade, tourism, and cultural ties with Malaysia."
+          "value": "significantly due to their close"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": -390,
+        "dy": -15,
+        "fontSize": 14,
+        "color": "black"
+      },
+      "encoding": {
+        "text": {
+          "value": "proximity and strong travel, trade, "
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": -390,
+        "dy": -15,
+        "fontSize": 14,
+        "color": "black"
+      },
+      "encoding": {
+        "text": {
+          "value": "proximity and strong travel, trade, "
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": -150,
+        "dy": 130,
+        "fontSize": 14,
+        "color": "black"
+      },
+      "encoding": {
+        "text": {
+          "value": "Non-Southeast Asian countries like China, India, "
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": -150,
+        "dy": 145,
+        "fontSize": 14,
+        "color": "black"
+      },
+      "encoding": {
+        "text": {
+          "value": "and Korea show substantial arrivals, driven by tourism,"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": -150,
+        "dy": 160,
+        "fontSize": 14,
+        "color": "black"
+      },
+      "encoding": {
+        "text": {
+          "value": "business ties, and growing international connections"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 80,
+        "dy": -150,
+        "fontSize": 16,
+        "color": "black"
+      },
+      "encoding": {
+        "text": {
+          "value": "Majority of the top 10 countries"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 80,
+        "dy": -135,
+        "fontSize": 16,
+        "color": "black"
+      },
+      "encoding": {
+        "text": {
+          "value": "are from Southeast Asia, highlighting"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 80,
+        "dy": -120,
+        "fontSize": 16,
+        "color": "black"
+      },
+      "encoding": {
+        "text": {
+          "value": "the region's strong travel ties with Malaysia"
         }
       }
     }

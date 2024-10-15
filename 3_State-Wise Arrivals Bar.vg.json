@@ -63,13 +63,13 @@
         "type": "text",
         "align": "left",
         "dx": -430,
-        "dy": -148,
+        "dy": -147,
         "fontSize": 14,
         "color": "black"
       },
       "encoding": {
         "text": {
-          "value": "This is due to Johor’s close proximity to Singapore,"
+          "value": "This is due to Johor’s close "
         }
       }
     },
@@ -78,13 +78,28 @@
         "type": "text",
         "align": "left",
         "dx": -430,
-        "dy": -134,
+        "dy": -132,
         "fontSize": 14,
         "color": "black"
       },
       "encoding": {
         "text": {
-          "value": "one of the busiest international land crossings in the world."
+          "value": "proximity to Singapore, one of the busiest "
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": -430,
+        "dy": -117,
+        "fontSize": 14,
+        "color": "black"
+      },
+      "encoding": {
+        "text": {
+          "value": "international land crossings in the world."
         }
       }
     },
@@ -99,7 +114,7 @@
       },
       "encoding": {
         "text": {
-          "value": "This is due Kuala Lumpur International Airport (KLIA),"
+          "value": "This is due Kuala Lumpur International"
         }
       }
     },
@@ -114,7 +129,67 @@
       },
       "encoding": {
         "text": {
-          "value": "being the main international gateway for air travelers into Malaysia."
+          "value": "Airport (KLIA), being the main international"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": -370,
+        "dy": 97,
+        "fontSize": 14,
+        "color": "black"
+      },
+      "encoding": {
+        "text": {
+          "value": "gateway for air travelers into Malaysia."
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 150,
+        "dy": 175,
+        "fontSize": 14,
+        "color": "black"
+      },
+      "encoding": {
+        "text": {
+          "value": "These smaller States, with fewer international "
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 150,
+        "dy": 190,
+        "fontSize": 14,
+        "color": "black"
+      },
+      "encoding": {
+        "text": {
+          "value": " entry points and more challenging geography,"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 150,
+        "dy": 205,
+        "fontSize": 14,
+        "color": "black"
+      },
+      "encoding": {
+        "text": {
+          "value": "rely more heavily on domestic tourism."
         }
       }
     }
