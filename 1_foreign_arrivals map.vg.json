@@ -32,6 +32,17 @@
       "data": {
         "url": "data/Malaysia Foreign Arrivals by Origin and Gender.csv"
       },
+      "transform": [
+        {
+          "aggregate": [
+            {"op": "sum", "field": "arrivals", "as": "total_arrivals"},
+            {"op": "max", "field": "lat", "as": "lat"},
+            {"op": "max", "field": "long", "as": "long"},
+            {"op": "max", "field": "state", "as": "state"}
+          ],
+          "groupby": ["poe"]
+        }
+      ],
       "mark": {
         "type": "circle",
         "tooltip": true
@@ -46,8 +57,7 @@
           "type": "quantitative"
         },
         "size": {
-          "aggregate": "sum",
-          "field": "arrivals",
+          "field": "total_arrivals",
           "type": "quantitative",
           "title": "Total Arrivals",
           "scale": {
@@ -58,7 +68,7 @@
           }
         },
         "color": {
-          "field": "arrivals",
+          "field": "total_arrivals",
           "type": "quantitative",
           "scale": {
             "scheme": "oranges"
@@ -72,7 +82,7 @@
             "title": "Entry Point"
           },
           {
-            "field": "arrivals",
+            "field": "total_arrivals",
             "type": "quantitative",
             "title": "Total Arrivals"
           },

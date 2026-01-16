@@ -81,7 +81,7 @@
             },
             {
               "code": "KOR",
-              "name": "Korea"
+              "name": "South Korea"
             },
             {
               "code": "VNM",
@@ -130,7 +130,7 @@
               "India",
               "Bangladesh",
               "Philippines",
-              "Korea",
+              "South Korea",
               "Vietnam"
             ],
             "range": [
@@ -213,13 +213,13 @@
         "type": "text",
         "align": "left",
         "dx": -390,
-        "dy": -15,
+        "dy": 0,
         "fontSize": 14,
         "color": "black"
       },
       "encoding": {
         "text": {
-          "value": "proximity and strong travel, trade, "
+          "value": "and cultural connections with Malaysia."
         }
       }
     },
@@ -249,7 +249,7 @@
       },
       "encoding": {
         "text": {
-          "value": "and Korea show substantial arrivals, driven by tourism,"
+          "value": "and South Korea show substantial arrivals, driven "
         }
       }
     },
@@ -264,7 +264,22 @@
       },
       "encoding": {
         "text": {
-          "value": "business ties, and growing international connections"
+          "value": "by tourism, business ties, and growing international "
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": -150,
+        "dy": 175,
+        "fontSize": 14,
+        "color": "black"
+      },
+      "encoding": {
+        "text": {
+          "value": "connections."
         }
       }
     },
